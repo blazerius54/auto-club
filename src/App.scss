@@ -1,0 +1,52 @@
+@import './styles/variables.scss';
+@import './styles/_header.scss';
+@import './styles/_footer.scss';
+@import './styles/Main.scss';
+@import './styles/Slider.scss';
+
+*{
+    font-family: $main-font;
+    color: $main-font-color;
+    font-size: 105%;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    background-color:  $main-color;    
+}
+
+button {
+    background: none;
+    border: none;
+}
+
+.single-game {
+    margin: 0 auto;
+    width: 50%;
+}
+
+.star-container {
+    position: absolute;
+    bottom: -0px;
+    display: flex;
+    justify-content: space-around;
+    background: rgba($color: $main-color, $alpha: 0.5);
+    width: 100%;
+    
+    .star {
+        font-size: 150%;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        transition: all 0.5s ease;
+    }
+
+    .star:active {
+        transform: scale(1.1)
+    }
+
+    .yellow-star {
+        @extend .star;
+        color: yellow;
+    }
+}

@@ -1,0 +1,79 @@
+.slider {
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20px;
+    .slider-content {
+        width:100%;
+        position: relative;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        display: flex;
+        // left: 25%;
+        transition: all 1s ease;
+        .game-container {
+            // position: absolute;
+            flex: 1 0 50%;
+            font-size: 60%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            opacity: 1;
+
+            .img-container {
+                flex: 1 1 20%;
+                position: relative;
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            .text-container {
+                flex: 1 1 80%;
+                margin-left: 5px;
+                padding: 45px;                 
+                
+                h2 {
+                    font-size: 130%;
+                    color: $yellow-color;
+                    margin-top: 0;
+                }
+
+                .stores {
+                    display: flex;
+                    
+                    img {
+                        width: 13%;
+                        height: 13%;
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+            .right {
+                z-index: 100;
+                position: absolute;
+                top: 35%;
+                left: 71%;
+            }
+
+            .left {
+                top: 35%;
+                left: 23%;
+                transform: rotate(180deg);                                
+                @extend .right;
+            }
+            
+            .right:active {
+                transform: scale(1.5);
+                transition: all 1s ease;
+            }
+
+            .left:active {
+                transform: rotate(180deg) scale(1.5);
+            }
+
+}
