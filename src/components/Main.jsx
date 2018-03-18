@@ -1,32 +1,55 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Infinite from 'react-infinite-loading';
+import InfiniteScroll from 'react-infinite-scroll-component';
 import Allaps from './Allaps';
 import PropTypes from 'prop-types';
 import Single from './Single-component';
 import Slider from './Slider';
 
-//images
-import fb from '../images/main/social/fb.png'
-import tw from '../images/main/social/tw.png'
-import google from '../images/main/social/google.png'
-import vk from '../images/main/social/vk.png'
 import logo from '../images/main/header/car.png'
 class Main extends Component {
   constructor (props) {
     super(props);
       this.state = {
-        apps: this.props.games.slice(0, 3),
-        step: 3,
+        step: 5,
+        apps: this.props.games.slice(0, 5),
+        isLoading: false,
     }
   }
 
+  // componentDidMount = () => window.addEventListener('scroll', this.handleScroll.bind(this))
+  // componentDidMount = () => document.getElementById('scrollMe').addEventListener('scroll', this.handleScroll.bind(this))
+
   foo() {
-    this.setState({
-      apps: this.props.games.slice(0, this.state.step+3),
-      step: this.state.step+3
-    })
+    // this.setState({
+    //   apps: this.props.games.slice(0, this.state.step),
+    //   step: this.state.step+3
+    // })
+    alert('s')
   }
+
+  handleScroll = () => {
+    console.log('s')
+    // if (((window.innerHeight + window.scrollY) >= document.body.offsetHeight) && !this.state.isLoading) {
+    //   this.setState({
+    //     isLoading: true,
+    //   });
+
+      // Load more content
+      this.setState({
+        apps: this.props.games.slice(0, this.state.step),
+        step: this.state.step+3
+      })
+      // Only call after loading finishes
+      this.setState({
+        isLoading: false,
+      });
+    // }
+}
+refresh() {
+  console.log('s')
+}
 
   render() {
     return (
@@ -42,7 +65,16 @@ class Main extends Component {
           <Slider games={this.props.games}/>
           <div className="apps">
               <p className='border-paragraph'>All Apps</p>
-              <div className="all-games-container">
+              <InfiniteScroll
+              pullDownToRefresh={100}
+              // refreshFunction={this.foo.bind(this)}
+              refreshFunction={this.handleScroll.bind(this)}
+              next={this.handleScroll.bind(this)}
+              hasMore={true}
+              height={200}
+              >
+              <div className="all-games-container" id='scrollMe'>
+
                 {
                   this.state.apps.map((item, index)=>{
                     return (
@@ -51,12 +83,8 @@ class Main extends Component {
                   })
                 }
               </div> 
-              {/* <Infinite  loading={true} 
-              
-              scrollHeight={150}>
-                <Allaps allApps={this.props.allApps}/> */}
-            {/* </Infinite> */}
-              <p onClick={()=>this.foo()}>click</p>
+              </InfiniteScroll>
+
           </div>
         </div>
       </div>
@@ -66,24 +94,7 @@ class Main extends Component {
   
 }
 
-Infinite.propTypes = {
-  // control the current status. loading = true the animation is displayed and no longer triggers handleLoading event
-  loading: PropTypes.bool,
-  // whether to display the loading animation
-  isLoading: PropTypes.bool,
-  // load animation components
-  asLoading: PropTypes.node,
-  // if true, scroll range as a current component on the contrary scroll range as a window
-  elementScroll: PropTypes.bool,
-  // set the height of the scroll container, scrollHeight={300} or scrollHeight="calc(100% - 100px)"
-  scrollHeight: PropTypes.any.isRequired,
-  // trigger handleLoading event threshold
-  scrollThreshold: PropTypes.num,
-  // scroll to the bottom event
-  handleLoading: PropTypes.func,
-  // sisplayed content
-  children: PropTypes.node
-};
+
 
 function mapStateToProps (state) {
   console.log(state)
