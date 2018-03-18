@@ -13,7 +13,20 @@ import google from '../images/main/social/google.png'
 import vk from '../images/main/social/vk.png'
 import logo from '../images/main/header/car.png'
 class Main extends Component {
+  constructor (props) {
+    super(props);
+      this.state = {
+        apps: this.props.games.slice(0, 3),
+        step: 3,
+    }
+  }
 
+  foo() {
+    this.setState({
+      apps: this.props.games.slice(0, this.state.step+3),
+      step: this.state.step+3
+    })
+  }
 
   render() {
     return (
@@ -31,7 +44,7 @@ class Main extends Component {
               <p className='border-paragraph'>All Apps</p>
               <div className="all-games-container">
                 {
-                  this.props.games.slice(0, 5).map((item, index)=>{
+                  this.state.apps.map((item, index)=>{
                     return (
                       <Single key={index} item={item}/>
                     )
@@ -43,7 +56,7 @@ class Main extends Component {
               scrollHeight={150}>
                 <Allaps allApps={this.props.allApps}/> */}
             {/* </Infinite> */}
-              click
+              <p onClick={()=>this.foo()}>click</p>
           </div>
         </div>
       </div>

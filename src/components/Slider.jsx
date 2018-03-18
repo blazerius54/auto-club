@@ -1,11 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import amazon from '../images/main/slider/amazon.png';
-import an from '../images/main/slider/an.png';
-import apple from '../images/main/slider/apple.png';
-import bb from '../images/main/slider/bb.png';
-import ovi from '../images/main/slider/ovi.png';
-import wp from '../images/main/slider/wp.png';
 import arrow from '../images/main/slider/arrow.png';
 import SingleSliderGame from './Single-Slider-game';
 

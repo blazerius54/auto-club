@@ -8,10 +8,8 @@
         padding-top: 20px;
         padding-bottom: 20px;
         display: flex;
-        // left: 25%;
         transition: all 1s ease;
         .game-container {
-            // position: absolute;
             flex: 1 0 50%;
             font-size: 60%;
             display: flex;
@@ -40,6 +38,10 @@
                     margin-top: 0;
                 }
 
+                p {
+                    padding-right: 15px;
+                }
+
                 .stores {
                     display: flex;
                     
@@ -47,22 +49,61 @@
                         width: 13%;
                         height: 13%;
                         margin-right: 10px;
+                        
                     }
                 }
+
+                @media screen and (max-width: 768px) {
+                    h2, p {
+                        font-size: 80%;
+                    }
+
+                    
+                } 
             }
         }
+
+        @media screen and (max-width: 768px) {
+            .game-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                align-content: center;
+
+                .img-container {
+                    width: 30%;
+                }
+            }
+
+            .text-container {
+                .stores {
+                    // flex-direction: column;
+                    justify-content: center;
+                    max-width: 100%;
+                    flex-wrap: wrap;
+                    img{
+                        flex:0 0 20%;
+                        
+                        margin-bottom: 10px;
+                    }
+                } 
+            }
+            
+        }
+
+        
     }
 
             .right {
                 z-index: 100;
                 position: absolute;
                 top: 35%;
-                left: 71%;
+                left: 70%;
             }
 
             .left {
                 top: 35%;
-                left: 23%;
+                left: 22%;
                 transform: rotate(180deg);                                
                 @extend .right;
             }
@@ -74,6 +115,36 @@
 
             .left:active {
                 transform: rotate(180deg) scale(1.5);
+            }
+
+            
+
+            @media screen and (max-width: 768px) {
+                .right {
+                    top: 40%;
+                    left: 70%;
+                    transform: scale(0.5)
+                }
+    
+                .left {                               
+                    top: 40%;
+                    left: 22%;
+                    transform: rotate(180deg) scale(0.5);
+                }
+            }
+
+            @media screen and (max-width: 1280px) {
+                .right {
+                    top: 40%;
+                    left: 70%;
+                    transform: scale(1)
+                }
+    
+                .left {                               
+                    top: 40%;
+                    left: 20%;
+                    transform: rotate(180deg) scale(1);
+                }
             }
 
 }
