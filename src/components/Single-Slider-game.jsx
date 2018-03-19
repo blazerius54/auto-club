@@ -14,14 +14,8 @@ class SingleSliderGame extends Component {
     constructor (props) {
         super(props);
         this.state = {
-          starValue: 0
-        }
-      }
-
-      componentDidMount () {
-        this.setState({
           starValue: this.props.item.rating
-        })
+        }
       }
 
       foo2(x) {
@@ -32,51 +26,51 @@ class SingleSliderGame extends Component {
       }
 
       foo() {
-        return (
-    
-          <div className='star-container'>
-            <h1 className={this.state.starValue>=1? 'yellow-star': 'star'} onClick={()=>this.foo2(1)}>{String.fromCharCode(9733)}</h1>
-            <h1 className={this.state.starValue>=2? 'yellow-star': 'star'} onClick={()=>this.foo2(2)}>{String.fromCharCode(9733)}</h1>
-            <h1 className={this.state.starValue>=3? 'yellow-star': 'star'} onClick={()=>this.foo2(3)}>{String.fromCharCode(9733)}</h1>
-            <h1 className={this.state.starValue>=4? 'yellow-star': 'star'} onClick={()=>this.foo2(4)}>{String.fromCharCode(9733)}</h1>
-            <h1 className={this.state.starValue>=5? 'yellow-star': 'star'} onClick={()=>this.foo2(5)}>{String.fromCharCode(9733)}</h1>
-          </div>
-    
-        )
+        let arr=[];
+        for(let i=0; i<5; i++) {
+          arr.push(
+            <h1 key={i} className={this.state.starValue>=i? 'yellow-star': 'star'} onClick={()=>this.foo2(i)}>{String.fromCharCode(9733)}</h1>
+          )          
+        }
+        return arr
       }
-     
 
     render() {
         const { item } = this.props;
         return (
 
-        <div className='game-container'>
-          <div className='img-container'>
-            <Link to={item.name}>
-               <img src={item.img_path} alt=""/>
-              {
-                this.props.letFoo? this.foo() : ''
-              }
-            </Link>
-          </div>
-          <div className='text-container'>
-            <h2>{item.header}</h2>
-            <p>{item.text}</p>
-            <div className='stores'>
-              <img src={apple} alt=""/>
-              <img src={an} alt=""/>
-              <img src={wp} alt=""/>
-              <img src={bb} alt=""/>
-              <img src={ovi} alt=""/>
-              <img src={amazon} alt=""/>
+          <div className='game-container'>
+            <div className='img-container'>
+              <Link to={item.name}>
+                <img src={item.img_path} alt=""/>
+                <div className='star-container'>
+
+                {
+                  this.props.letFoo? 
+                    this.foo() 
+                    : 
+                    ''
+                }
+                
+                </div>
+              </Link>
+            </div>
+            <div className='text-container'>
+              <h2>{item.header}</h2>
+              <p>{item.text}</p>
+              <div className='stores'>
+                <img src={apple} alt=""/>
+                <img src={an} alt=""/>
+                <img src={wp} alt=""/>
+                <img src={bb} alt=""/>
+                <img src={ovi} alt=""/>
+                <img src={amazon} alt=""/>
+              </div>
             </div>
           </div>
-        </div>
         )
     }
 }
-
-
 
 function mapDispatchToProps (dispatch) {
   return bindActionCreators({ setRating }, dispatch)

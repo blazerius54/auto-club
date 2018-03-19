@@ -54,7 +54,6 @@ refresh() {
   render() {
     return (
       <div>
-
         <div className='main-header'>
           <div className="logo">
             <img src={logo} alt="" />
@@ -82,16 +81,14 @@ refresh() {
                     )
                   })
                 }
+
               </div> 
               </InfiniteScroll>
-
           </div>
         </div>
       </div>
-      
     );
   }
-  
 }
 
 
@@ -102,8 +99,5 @@ function mapStateToProps (state) {
       games: state.games,
   } 
 }
-
-
-
 
 export default connect(mapStateToProps)(Main);
