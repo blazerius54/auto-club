@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Infinite from 'react-infinite-loading';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import Allaps from './Allaps';
 import PropTypes from 'prop-types';
 import Single from './Single-component';
 import Slider from './Slider';

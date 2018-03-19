@@ -1,10 +1,9 @@
 import { createStore } from 'redux';
 import { reducer } from '../reducer/index';
-import { games, allApps} from '../data/games';
+import { games } from '../data/games';
 
 const defaultState = {
     games,
-    // allApps
 };
 
 const store = createStore(reducer, defaultState);

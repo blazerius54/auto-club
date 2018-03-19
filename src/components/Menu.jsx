@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
 import fb from '../images/main/social/fb.png'
 import tw from '../images/main/social/tw.png'
 import google from '../images/main/social/google.png'

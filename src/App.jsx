@@ -1,19 +1,12 @@
 import React, { Component } from 'react';
 import Main from './components/Main';
 import SubMain from './components/Sub-main';
-
-
-import { Route, Switch, Router, Link } from 'react-router-dom';
-
+import { Route, Switch, Router } from 'react-router-dom';
 import createBrowserHistory from 'history/createBrowserHistory';
 import store from './store/index';
 import { Provider } from 'react-redux';
-
-
-
 import './App.scss';
 import Menu from './components/Menu';
-import logo from './images/main/header/car.png'
 
 const history = createBrowserHistory();
 
@@ -28,9 +21,6 @@ class App extends Component {
               <Menu/>
               <Route exact path='/' component={Main} />
               <Route exact path='/:name' component={SubMain} />
-              {/* <Link to={'SubMain'}>
-                SubMain
-              </Link> */}
               <footer>
                 <div className='footer-content'>
                   <div className='copyright'>

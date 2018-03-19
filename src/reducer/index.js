@@ -18,7 +18,5 @@ export function reducer(state = [], action) {
             return newState;
         default:
             return state;
-            
-return newState;
     }
 }

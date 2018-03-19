@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import arrow from '../images/main/slider/arrow.png';
 import SingleSliderGame from './Single-Slider-game';
 
