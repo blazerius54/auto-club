@@ -15,7 +15,7 @@ class Single extends Component {
       
       moveSlider (x) {
     
-        let newPosition = parseInt(this.state.containerStyle.left);
+        let newPosition = parseInt(this.state.containerStyle.left, 10);
         newPosition+=50*x;
         this.setState({
           active: this.state.active - x,

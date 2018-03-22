@@ -4,7 +4,6 @@ import fb from '../images/main/social/fb.png'
 import tw from '../images/main/social/tw.png'
 import google from '../images/main/social/google.png'
 import vk from '../images/main/social/vk.png'
-import logo from '../images/main/header/car.png'
 
 class Menu extends Component {
     render () {

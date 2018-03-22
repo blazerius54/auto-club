@@ -5,7 +5,6 @@ import fourthCar from '../images/main/slider/main-4.png';
 import fifthCar from '../images/main/slider/main-5.png';
 import sixthCar from '../images/main/slider/main-6.png';
 import seventhCar from '../images/main/slider/main-7.png';
-import car from '../images/main/slider/car.png';
 
 export const games = [
     {   

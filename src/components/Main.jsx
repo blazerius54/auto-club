@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Infinite from 'react-infinite-loading';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import PropTypes from 'prop-types';
 import Single from './Single-component';
@@ -12,42 +11,19 @@ class Main extends Component {
     super(props);
       this.state = {
         step: 5,
-        apps: this.props.games.slice(0, 5),
-        isLoading: false,
+        apps: this.props.games.slice(0, 5)
     }
   }
 
-  // componentDidMount = () => window.addEventListener('scroll', this.handleScroll.bind(this))
-  // componentDidMount = () => document.getElementById('scrollMe').addEventListener('scroll', this.handleScroll.bind(this))
-
-  foo() {
-    // this.setState({
-    //   apps: this.props.games.slice(0, this.state.step),
-    //   step: this.state.step+3
-    // })
-    alert('s')
-  }
-
   handleScroll = () => {
-    console.log('s')
-    // if (((window.innerHeight + window.scrollY) >= document.body.offsetHeight) && !this.state.isLoading) {
-    //   this.setState({
-    //     isLoading: true,
-    //   });
 
-      // Load more content
+    setTimeout(()=>{
       this.setState({
         apps: this.props.games.slice(0, this.state.step),
-        step: this.state.step+3
+        step: this.state.step+5
       })
-      // Only call after loading finishes
-      this.setState({
-        isLoading: false,
-      });
-    // }
-}
-refresh() {
-  console.log('s')
+    })
+
 }
 
   render() {
@@ -64,12 +40,9 @@ refresh() {
           <div className="apps">
               <p className='border-paragraph'>All Apps</p>
               <InfiniteScroll
-              pullDownToRefresh={100}
-              // refreshFunction={this.foo.bind(this)}
-              refreshFunction={this.handleScroll.bind(this)}
-              next={this.handleScroll.bind(this)}
+              next={()=>this.handleScroll()}
               hasMore={true}
-              height={200}
+              height={250}
               >
               <div className="all-games-container" id='scrollMe'>
 
@@ -83,14 +56,13 @@ refresh() {
 
               </div> 
               </InfiniteScroll>
+              <div className="gray-div"></div>
           </div>
         </div>
       </div>
     );
   }
 }
-
-
 
 function mapStateToProps (state) {
   console.log(state)

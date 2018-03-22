@@ -1,20 +1,21 @@
-.footer-content {
-    width: 50%;
-    padding: 10px;
-    display: flex;    
-    font-size: 50%;
-    // justify-content: center;
-    margin: 0 auto;
-        
-    * {
-        color: $main-font-header-color;
-        margin-right: 10px;
-    }
-
-
+footer {
+    padding: 10px 0;
     
-    .copyright {
-        // flex: 1 0;
-        flex-basis: 40%;
+    .footer-content {
+        margin-top: 50%;
+        width: 50%;
+        padding: 10px;
+        display: flex;    
+        font-size: 50%;
+        margin: 0 auto;
+
+        * {
+            color: $main-font-header-color;
+            margin-right: 10px;
+        }
+    
+        .copyright {
+            flex-basis: 40%;
+        }
     }
 }
