@@ -7,6 +7,7 @@ import store from './store/index';
 import { Provider } from 'react-redux';
 import './App.scss';
 import Menu from './components/Menu';
+import Footer from './components/Footer';
 
 const history = createBrowserHistory();
 
@@ -21,18 +22,7 @@ class App extends Component {
               <Menu/>
               <Route exact path='/' component={Main} />
               <Route exact path='/:name' component={SubMain} />
-              <footer>
-                <div className='footer-content'>
-                  <div className='copyright'>
-                  © Auto Club 2014
-                  </div>
-                  <div className="menu">
-                      <a href="">home</a>
-                      <a href="">about</a>
-                      <a href="">contact us</a>
-                    </div>
-                </div>
-              </footer>
+              <Footer/>
             </div>  
           </Provider>    
         </Switch>

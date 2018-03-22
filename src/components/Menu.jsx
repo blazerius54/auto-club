@@ -17,10 +17,10 @@ class Menu extends Component {
                 <a href="">contact us</a>
               </div>
               <div className="social">
-                <a href="http://facebook.com" target="_blank"><img src={fb} alt=""/></a>
-                <a href="http://twitter.com" target="_blank"><img src={tw} alt=""/></a>
-                <a href="http://plus.google.com" target="_blank"><img src={google} alt=""/></a>
-                <a href="http://vk.com" target="_blank"><img src={vk} alt=""/></a>
+                <a href="http://facebook.com"><img src={fb} alt=""/></a>
+                <a href="http://twitter.com"><img src={tw} alt=""/></a>
+                <a href="http://plus.google.com"><img src={google} alt=""/></a>
+                <a href="http://vk.com"><img src={vk} alt=""/></a>
               </div>
             </div>
             

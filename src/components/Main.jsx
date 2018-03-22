@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import PropTypes from 'prop-types';
 import Single from './Single-component';
 import Slider from './Slider';
 
@@ -65,7 +64,6 @@ class Main extends Component {
 }
 
 function mapStateToProps (state) {
-  console.log(state)
   return {
       games: state.games,
   } 

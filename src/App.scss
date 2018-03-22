@@ -1,6 +1,6 @@
 @import './styles/variables.scss';
 @import './styles/_header.scss';
-@import './styles/_footer.scss';
+@import './styles/Footer.scss';
 @import './styles/Main.scss';
 @import './styles/Slider.scss';
 
@@ -61,7 +61,6 @@ button {
         @extend .star;
         color: yellow;
     }
-
 }
 
 @media screen and (max-width: 1280px){
