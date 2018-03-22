@@ -21,9 +21,9 @@ class App extends Component {
           <Provider store={store}>
             <div className="app-container">         
               <Header/>
-              <Route exact path='/' component={Main} />
+              <Route exact path={process.env.PUBLIC_URL + '/'} component={Main} />
               <Route path='/p:name' component={SubMain} />
-              <Route exact path='/about' component={About} />
+              <Route path='/about' component={About} />
               <Footer/>
             </div>  
           </Provider>    
