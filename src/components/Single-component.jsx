@@ -7,7 +7,7 @@ class Single extends Component {
         const { item } = this.props;
         return (
             <div className="small-game-container">
-                <Link to={item.name}>
+                <Link to={process.env.PUBLIC_URL + item.name}>
                     <img src={item.img_path} alt="" className='small-game-img'/>
                 </Link>
                 <p>{item.header}</p>
