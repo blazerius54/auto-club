@@ -41,7 +41,7 @@ class SingleSliderGame extends Component {
 
           <div className='game-container'>
             <div className='img-container'>
-              <Link to={item.name}>
+              <Link to={'p'+item.name}>
                 <img src={item.img_path} alt=""/>
                 <div className='star-container'>
 

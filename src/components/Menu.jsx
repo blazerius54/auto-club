@@ -1,32 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import fb from '../images/main/social/fb.png'
-import tw from '../images/main/social/tw.png'
-import google from '../images/main/social/google.png'
-import vk from '../images/main/social/vk.png'
 
-class Menu extends Component {
-    render () {
-
-        return (
-            <header className='main-header'>
-            <div className='inner-main-header'>
-              <div className="menu">
-                <Link to={'/'}>home</Link>
-                <a href="">about</a>
-                <a href="">contact us</a>
-              </div>
-              <div className="social">
-                <a href="http://facebook.com"><img src={fb} alt=""/></a>
-                <a href="http://twitter.com"><img src={tw} alt=""/></a>
-                <a href="http://plus.google.com"><img src={google} alt=""/></a>
-                <a href="http://vk.com"><img src={vk} alt=""/></a>
-              </div>
-            </div>
-            
-          </header>
-        )
-    }
-}
-
-export default Menu
+const Menu = () => {
+    return (
+        <div className="menu">
+            <Link to='/'>home</Link>
+            <Link to='/about'>about</Link>
+        </div>
+    )
+  };
+  export default Menu;

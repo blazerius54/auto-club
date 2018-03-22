@@ -1,5 +1,6 @@
 @import './styles/variables.scss';
-@import './styles/_header.scss';
+@import './styles/About.scss';
+@import './styles/Header.scss';
 @import './styles/Footer.scss';
 @import './styles/Main.scss';
 @import './styles/Slider.scss';
@@ -9,6 +10,7 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
+    align-content: center;
 }
 
 .main-header, .slider {

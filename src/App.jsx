@@ -6,8 +6,9 @@ import createBrowserHistory from 'history/createBrowserHistory';
 import store from './store/index';
 import { Provider } from 'react-redux';
 import './App.scss';
-import Menu from './components/Menu';
+import Header from './components/Header';
 import Footer from './components/Footer';
+import About from './components/About';
 
 const history = createBrowserHistory();
 
@@ -19,9 +20,10 @@ class App extends Component {
         <Switch>
           <Provider store={store}>
             <div className="app-container">         
-              <Menu/>
+              <Header/>
               <Route exact path='/' component={Main} />
-              <Route exact path='/:name' component={SubMain} />
+              <Route path='/p:name' component={SubMain} />
+              <Route exact path='/about' component={About} />
               <Footer/>
             </div>  
           </Provider>    

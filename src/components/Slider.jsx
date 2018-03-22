@@ -38,12 +38,6 @@ class Single extends Component {
         if(this.state.active === 0 && x===1) {
           console.log('s')
           
-        //   this.setState({
-        //     active: this.props.games.length-1,
-        //     containerStyle: {
-        //       left:  -25*(this.props.games.length)+'%',
-        //     }
-        //   }) 
           this.setState({
             active: 0,
             containerStyle: {
@@ -73,8 +67,5 @@ class Single extends Component {
         )
     }
 }
-
-
-
 
 export default Single;

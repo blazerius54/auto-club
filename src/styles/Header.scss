@@ -26,6 +26,8 @@
         }
 
         .social {
+            margin-bottom: -5px;
+
             img {
                 margin-right: 10px;
             }
@@ -45,6 +47,15 @@
 
                 p {
                     font-size: 90%;
+                }
+            }
+
+            @media screen and (max-width: 768px) {
+                .logo {
+                    img {
+                        width: 30%;
+                        
+                    }
                 }
             }
 
