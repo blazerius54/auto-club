@@ -23,8 +23,6 @@ class Single extends Component {
             left:  newPosition+'%',
           }
         })
-        console.log(this.state.active)
-        console.log(this.state.containerStyle.left)
     
         if(this.state.active>=this.props.games.length-1 && x===-1) {
           this.setState({
@@ -36,17 +34,13 @@ class Single extends Component {
           
         }
         if(this.state.active === 0 && x===1) {
-          console.log('s')
-          
           this.setState({
             active: 0,
             containerStyle: {
               left:  25+'%',
             }
           }) 
-          
           }
-          
       }
 
     render() {
