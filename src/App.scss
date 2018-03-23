@@ -72,3 +72,10 @@ button {
         }
     }
 }
+@media screen and (max-width: 480px){
+    .star-container {
+        .star {
+            font-size: 60%;
+        }
+    }
+}

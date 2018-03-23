@@ -6,9 +6,9 @@ class Single extends Component {
     constructor (props) {
         super(props);
         this.state = {
-          active: 0,
+          active: 2,
           containerStyle: {
-              left: 25+'%'
+              left: -75+'%'
           }
         }
       }
@@ -24,6 +24,7 @@ class Single extends Component {
           }
         })
         console.log(this.state.active)
+        console.log(this.state.containerStyle.left)
     
         if(this.state.active>=this.props.games.length-1 && x===-1) {
           this.setState({
@@ -32,7 +33,6 @@ class Single extends Component {
               left:  25+'%',
             }
           })
-        console.log(this.state.containerStyle.left)
           
         }
         if(this.state.active === 0 && x===1) {
@@ -54,15 +54,15 @@ class Single extends Component {
             <div className='slider'>
             <img src={arrow} className='l-arrow left' alt="" onClick={()=>this.moveSlider(1)}/>
             <img src={arrow} className='right' alt="" onClick={()=>this.moveSlider(-1)}/>
-            <div className="slider-content" style={this.state.containerStyle}> 
-            {
-              this.props.games.map((item, index)=>{
-                return  (
-                  <SingleSliderGame key={index} item={item} />
-                )
-              })
-            }
-            </div>
+              <div className="slider-content" style={this.state.containerStyle}> 
+              {
+                this.props.games.map((item, index)=>{
+                  return  (
+                    <SingleSliderGame key={index} item={item} />
+                  )
+                })
+              }
+              </div>
             </div>
         )
     }
